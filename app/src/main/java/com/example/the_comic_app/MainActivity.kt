@@ -19,21 +19,9 @@ class MainActivity : AppCompatActivity() {
         logoText.text = getString(R.string.app_name)
         image = findViewById(R.id.testImageView)
 
-        // List with all the ComicStrip objects.
-        val listOfComics = mutableListOf(ComicStrip("https://imgs.xkcd.com/comics/party_quadrants.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/outlet_denier.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/i_shouldnt_complain.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/qua.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/false_dichotomy.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/deviled_eggs.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/consensus_time.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/advanced_techniques.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/galaxies.png"),
-            ComicStrip("https://imgs.xkcd.com/comics/salary_negotiation.png"))
-
-
-        loadImage(listOfComics[0].imgUrl)
-
+     //  loadImage(listOfComics[0].img)
+        // Using function loadImage with string from the Singelton list with comics.
+        loadImage(DataManager.comics[0].img)
     }
     // Function to load image url using Glide.
     fun loadImage(url:String) {

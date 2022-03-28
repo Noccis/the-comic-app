@@ -1,0 +1,6 @@
+Hello!
+First day was spent getting to know Kotlin again after writing in other languages for a while and
+also to remebering how to do a recyclerview.
+I choosed to do the list as a Singelton to get easy access to it and because the whole app is based on it.
+I have only used API's as a list in Javascript before and therefore just copied some of the comic image urls to my own list.
+Time spent: 4 hours

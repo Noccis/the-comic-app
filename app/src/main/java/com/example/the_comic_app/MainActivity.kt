@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ComicsRecycleAdapter(this, DataManager.comics)
+
+
   //      image = findViewById(R.id.testImageView)
 
         // Using function loadImage with string from the Singelton list with comics.

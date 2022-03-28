@@ -23,7 +23,10 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Current comic
         val comic = comics[position]
-        holder.comicImage
+        // Load image url into imageView using Glide
+        Glide.with(context)
+            .load(comic.img)
+            .into(holder.comicImage)
     }
 
     override fun getItemCount() = comics.size
@@ -32,8 +35,8 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
         // Locate the views in the list_item
         val comicImage = itemView.findViewById<ImageView>(R.id.comicImageView)
     }
-
-    fun loadImage(url:String, view: ImageView, context: Context) {
+/*
+fun loadImage(url:String, view: ImageView, context: Context) {
         if (url !== null) {
             Glide.with(context)
                 .load(url)
@@ -42,4 +45,6 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
             Log.d("Dodo", "LoadImage FAIL")
         }
     }
+ */
+
 }

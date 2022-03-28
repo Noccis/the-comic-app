@@ -8,21 +8,22 @@ import com.bumptech.glide.Glide
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var logoText: TextView
+ //   lateinit var logoText: TextView
     lateinit var image: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        logoText = findViewById(R.id.logoTextView)
-        logoText.text = getString(R.string.app_name)
-        image = findViewById(R.id.testImageView)
+    //    logoText = findViewById(R.id.logoTextView)
+      //  logoText.text = getString(R.string.app_name)
+  //      image = findViewById(R.id.testImageView)
 
-     //  loadImage(listOfComics[0].img)
         // Using function loadImage with string from the Singelton list with comics.
-        loadImage(DataManager.comics[0].img)
+  //      loadImage(DataManager.comics[0].img)
+
     }
+
     // Function to load image url using Glide.
     fun loadImage(url:String) {
         if (url !== null) {

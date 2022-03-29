@@ -32,11 +32,12 @@
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultConstraintLayout"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/list_item" />
 
     <ImageButton
@@ -75,7 +76,6 @@
         android:id="@+id/resultConstraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3">

@@ -1,8 +1,9 @@
 package com.example.the_comic_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
+import android.util.Log
+import android.view.View
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,8 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var logoText: TextView
     lateinit var recyclerView: RecyclerView
-
-  //  lateinit var image: ImageView
+    lateinit var searchView: EditText
+    lateinit var searchButton: Button
+    var searchViewIsVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,33 +23,56 @@ class MainActivity : AppCompatActivity() {
 
         logoText = findViewById(R.id.logoTextView)
         logoText.text = getString(R.string.app_name)
+        searchView = findViewById(R.id.searchEditText)
+        searchView.visibility = View.GONE
+        searchButton = findViewById(R.id.searchButton)
+        searchButton.visibility = View.GONE
+
+        val showSearchImageButton = findViewById<ImageButton>(R.id.SearchImageButton)
+        showSearchImageButton.setOnClickListener {
+            toggleShowSearchFunction()
+        }
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ComicsRecycleAdapter(this, DataManager.comics)
 
 
-  //      image = findViewById(R.id.testImageView)
+        searchButton.setOnClickListener {
+            searchComics()
+        }
 
-        // Using function loadImage with string from the Singelton list with comics.
-  //      loadImage(DataManager.comics[0].img)
 
     }
 
-    // Function to load image url using Glide.
-    /*
-     fun loadImage(url:String) {
-        if (url !== null) {
-            Glide.with(this)
-                .load(url)
-                .into(image)
-        } else {
-            image.setImageResource(R.drawable.ic_launcher_background)
+    fun searchComics() {
+        val searchText = searchView.text.toString()
+        compareIDToString(searchText)
+
+    }
+
+    fun compareIDToString(text: String) {
+        for (comic in DataManager.comics) {
+            val id = comic.id.toString()
+            if (id == text ) {
+                Log.d("dodo", "WOHO A MATCH!")
+            }else{
+                Log.d("dodo", "No match....")
+            }
         }
     }
-     */
 
-
+    fun toggleShowSearchFunction() {
+        if (!searchViewIsVisible) {
+            searchView.visibility = View.VISIBLE
+            searchButton.visibility = View.VISIBLE
+            searchViewIsVisible = true
+        }else{
+            searchView.visibility = View.GONE
+            searchButton.visibility = View.GONE
+            searchViewIsVisible = false
+        }
+    }
 
 }
 

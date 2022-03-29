@@ -1,11 +1,15 @@
 package com.example.the_comic_app
 
 object DataManager {
+    // The magical list of comic strips!
     val comics = mutableListOf<ComicStrip>()
 
+    // create some comics when we create our DataManager object
     init {
         createData()
     }
+
+    // function adding 10 ComicStip objects.
     fun createData() {
         comics.add(ComicStrip("https://imgs.xkcd.com/comics/outlet_denier.png",
             2589,

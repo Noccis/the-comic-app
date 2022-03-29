@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     fun toggleShowSearchFunction() {
         if (!searchViewIsVisible) {
+            searchView.setText("")
             searchView.visibility = View.VISIBLE
             searchButton.visibility = View.VISIBLE
             searchViewIsVisible = true
@@ -104,9 +105,6 @@ class MainActivity : AppCompatActivity() {
             resultImageView.visibility = View.GONE
         }
     }
-
-
-
 }
 
 

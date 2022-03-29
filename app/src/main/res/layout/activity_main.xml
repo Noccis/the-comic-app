@@ -34,8 +34,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        app:layout_constraintTop_toBottomOf="@+id/resultConstraintLayout"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/list_item" />
 
     <ImageButton
@@ -69,5 +71,38 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoTextView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <ImageView
+            android:id="@+id/resultImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/no_image" />
+
+        <TextView
+            android:id="@+id/noMatchTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sorry no match!"
+            app:layout_constraintBottom_toTopOf="@+id/resultImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,15 +37,18 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
         // Set comic id and description
         holder.comicId.text = comic.id.toString()
         holder.comicDescription.text = comic.description
-        holder.comicExplanation.visibility = View.INVISIBLE
+        holder.comicExplanation.visibility = View.GONE
+        holder.comicExplanation.text = comic.explanation
         holder.toggleExplanationbutton.setOnClickListener {
             if (!explanationIsVisible) {
                 holder.comicExplanation.visibility = View.VISIBLE
                 explanationIsVisible = true
+                holder.toggleExplanationbutton.setText(R.string.ok)
                 Log.d("Dodo", "Explanation should now be visible")
             }else{
-                holder.comicExplanation.visibility = View.INVISIBLE
+                holder.comicExplanation.visibility = View.GONE
                 explanationIsVisible = false
+                holder.toggleExplanationbutton.setText(R.string.show_explanation)
             }
         }
     }

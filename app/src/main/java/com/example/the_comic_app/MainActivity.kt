@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var logoText: TextView
     lateinit var recyclerView: RecyclerView
+
   //  lateinit var image: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {

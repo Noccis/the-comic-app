@@ -1,12 +1,16 @@
 Hello!
-First day was spent getting to know Kotlin again after writing in other languages for a while and
-also to remembering how to do a recyclerview.
+First day was spent getting to know Kotlin again after writing in other languages for a while.
 I made the list as a Singelton to get easy access to it and because the whole app is based on it.
-I have only used API's as a list in Javascript before.
-At first I tried reading up on Kotlin and fetching API but it took to much time so I just copied some of the comic image urls to my own list.
-Time spent: 4 hours (+ 1,5 hour on evening)
+We just started to learn about API and JSON in the React course I am taking now and have only used it as a list. At first I tried reading up on Kotlin and fetching API
+but it took to much time so I just copied some of the comic image urls to my own list.
 
-Second day was all about design and getting that explanation and searchfunction in place.
-Time spent: 5 hours
+I have not been writing in Android Studio since out Android course and I realize that there is much to be learned, mainly about the design tool. I will spend time on that this summer.
+I wanted the search-button inside the searchEditText to be more aligned and take up the same amount of height as the searchEditText but I could not solve it.
+I also spent some time trying to learn how to do a Fragment design to move the search function to its own fragment so that the recycle view wouldn't show below the matching comic but it took to much time.
 
-General notes:
+I choose the features that I thought would be possible with my narrow knowledge of Android Studio.
+With the list and ComicStrip class in separate files it will be easier to make improvements and extend the features.
+It was much fun to go back to Kotlin and Android Studio and I now know what I will be doing during the summer break. :-)
+
+Time spent: 11,5 hours
+/Toni

@@ -17,10 +17,15 @@ class MainActivity : AppCompatActivity() {
     // Edit text view where you type in your search text
     lateinit var searchView: EditText
     lateinit var searchButton: Button
-    // ImageView containing image if there is a match when you search
-    lateinit var resultImageView: ImageView
+
+    // Views containing ComicStrip if there is a match when you search
+    lateinit var matchComicId: TextView
+    lateinit var matchComicName: TextView
+    lateinit var matchImageView: ImageView
+
     // The Text showing that there is no match when you search
     lateinit var noMatchTextView: TextView
+
     // Bool to keep track of visibility of the search items.
     var searchViewsIsVisible = false
 
@@ -41,10 +46,15 @@ class MainActivity : AppCompatActivity() {
             searchComics()
         }
         searchButton.visibility = View.GONE
-        resultImageView = findViewById(R.id.resultImageView)
-        resultImageView.visibility = View.GONE
         noMatchTextView = findViewById(R.id.noMatchTextView)
         noMatchTextView.visibility = View.GONE
+        matchImageView = findViewById(R.id.matchImageView)
+        matchImageView.visibility = View.GONE
+        matchComicId = findViewById(R.id.matchIdTextView)
+        matchComicId.visibility = View.GONE
+        matchComicName = findViewById(R.id.matchNameTextView)
+        matchComicName.visibility = View.GONE
+
 
         // The search icon to toggle visibility:
         val showSearchImageButton = findViewById<ImageButton>(R.id.SearchImageButton)
@@ -64,8 +74,7 @@ class MainActivity : AppCompatActivity() {
         // Getting the input and comparing it to list
         val searchText = searchView.text.toString().lowercase()
         compareIDToString(searchText)
-        // Showing the result
-        resultImageView.visibility = View.VISIBLE
+
     }
 
     private fun compareIDToString(text: String) {
@@ -93,18 +102,29 @@ class MainActivity : AppCompatActivity() {
             // If comic object still is null then no match where found.
             noMatchTextView.visibility = View.VISIBLE
             noMatchTextView.setText(R.string.no_match)
-            resultImageView.setImageResource(R.drawable.no_image)
+            matchImageView.setImageResource(R.drawable.no_image)
         }
     }
 
     private fun showResult(comic: ComicStrip) {
+        // Connecting all the match views with the match comic
+
             Glide.with(this)
                 .load(comic.img)
-                .into(resultImageView)
+                .into(matchImageView)
+        matchComicId.text = comic.id.toString()
+        matchComicName.text = comic.name
+
+        // Showing the result
+        matchImageView.visibility = View.VISIBLE
+        matchComicId.visibility = View.VISIBLE
+        matchComicName.visibility = View.VISIBLE
+
+
     }
 
     private fun toggleShowSearchFunction() {
-        // Toggles the visibility on all the searchviews and removes searchtext
+        // Toggles the visibility on all the searchviews, matchviews and removes searchtext
         if (!searchViewsIsVisible) {
             searchView.setText("")
             searchView.visibility = View.VISIBLE
@@ -114,7 +134,9 @@ class MainActivity : AppCompatActivity() {
             searchView.visibility = View.GONE
             searchButton.visibility = View.GONE
             noMatchTextView.visibility = View.GONE
-            resultImageView.visibility = View.GONE
+            matchImageView.visibility = View.GONE
+            matchComicId.visibility = View.GONE
+            matchComicName.visibility = View.GONE
             searchViewsIsVisible = false
         }
     }

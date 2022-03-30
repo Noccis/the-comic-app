@@ -1,7 +1,6 @@
 package com.example.the_comic_app
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,7 +61,7 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
         val comicImage = itemView.findViewById<ImageView>(R.id.comicImageView)
         val comicId = itemView.findViewById<TextView>(R.id.comicIdTextView)
         val comicDescription = itemView.findViewById<TextView>(R.id.descriptionTextView)
-        val toggleExplanationbutton = itemView.findViewById<Button>(R.id.toggleExplanationbutton)
+        val toggleExplanationbutton = itemView.findViewById<Button>(R.id.matchtoggleExplanationbutton)
         val comicExplanation = itemView.findViewById<TextView>(R.id.explanationTextView)
         val comicName = itemView.findViewById<TextView>(R.id.comicNameTextView)
     }

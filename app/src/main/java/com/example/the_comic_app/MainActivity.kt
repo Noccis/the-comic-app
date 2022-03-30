@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
     // Views containing ComicStrip if there is a match when you search
     lateinit var matchComicId: TextView
     lateinit var matchComicName: TextView
-    lateinit var matchComicDescription: TextView
-    lateinit var matchComicExplanation: TextView
-    lateinit var matchShowExplanationButton: Button
     lateinit var matchImageView: ImageView
 
     // The Text showing that there is no match when you search
@@ -57,13 +54,6 @@ class MainActivity : AppCompatActivity() {
         matchComicId.visibility = View.GONE
         matchComicName = findViewById(R.id.matchNameTextView)
         matchComicName.visibility = View.GONE
-        matchComicDescription = findViewById(R.id.matchDescriptionTextView)
-        matchComicDescription.visibility = View.GONE
-        matchComicExplanation = findViewById(R.id.matchExplanationTextView)
-        matchComicExplanation.visibility = View.GONE
-        matchShowExplanationButton = findViewById(R.id.matchtoggleExplanationbutton)
-        matchShowExplanationButton.visibility = View.GONE
-
 
 
         // The search icon to toggle visibility:
@@ -124,15 +114,12 @@ class MainActivity : AppCompatActivity() {
                 .into(matchImageView)
         matchComicId.text = comic.id.toString()
         matchComicName.text = comic.name
-        matchComicDescription.text = comic.description
-        matchComicExplanation.text = comic.explanation
+
         // Showing the result
         matchImageView.visibility = View.VISIBLE
         matchComicId.visibility = View.VISIBLE
         matchComicName.visibility = View.VISIBLE
-        matchComicDescription.visibility = View.VISIBLE
-        matchComicExplanation.visibility = View.VISIBLE
-        matchShowExplanationButton.visibility = View.VISIBLE
+
 
     }
 
@@ -150,9 +137,6 @@ class MainActivity : AppCompatActivity() {
             matchImageView.visibility = View.GONE
             matchComicId.visibility = View.GONE
             matchComicName.visibility = View.GONE
-            matchComicDescription.visibility = View.GONE
-            matchComicExplanation.visibility = View.GONE
-            matchShowExplanationButton.visibility = View.GONE
             searchViewsIsVisible = false
         }
     }

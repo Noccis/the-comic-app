@@ -34,17 +34,19 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
                 .load(comic.img)
                 .into(holder.comicImage)
         }
-        // Set comic id and description
+        // Set comic id, name, description and explanation
         holder.comicId.text = comic.id.toString()
         holder.comicDescription.text = comic.description
+        holder.comicName.text = comic.name
+        // Hiding explanation
         holder.comicExplanation.visibility = View.GONE
         holder.comicExplanation.text = comic.explanation
+        // Button to toggle if explanation is visible
         holder.toggleExplanationbutton.setOnClickListener {
             if (!explanationIsVisible) {
                 holder.comicExplanation.visibility = View.VISIBLE
                 explanationIsVisible = true
                 holder.toggleExplanationbutton.setText(R.string.ok)
-                Log.d("Dodo", "Explanation should now be visible")
             }else{
                 holder.comicExplanation.visibility = View.GONE
                 explanationIsVisible = false
@@ -61,18 +63,7 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
         val comicId = itemView.findViewById<TextView>(R.id.comicIdTextView)
         val comicDescription = itemView.findViewById<TextView>(R.id.descriptionTextView)
         val toggleExplanationbutton = itemView.findViewById<Button>(R.id.toggleExplanationbutton)
-        var comicExplanation = itemView.findViewById<TextView>(R.id.explanationTextView)
+        val comicExplanation = itemView.findViewById<TextView>(R.id.explanationTextView)
+        val comicName = itemView.findViewById<TextView>(R.id.comicNameTextView)
     }
-/*
-fun loadImage(url:String, view: ImageView, context: Context) {
-        if (url !== null) {
-            Glide.with(context)
-                .load(url)
-                .into(view)
-        } else {
-            Log.d("Dodo", "LoadImage FAIL")
-        }
-    }
- */
-
 }

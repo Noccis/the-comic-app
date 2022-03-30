@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="#61309E"
         android:fontFamily="@font/bangers"
-        android:text="Test"
+        android:text="Logo"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
@@ -45,17 +45,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/bg3"
-        app:tint="@color/white"
+        android:contentDescription="Search icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search_icon" />
+        app:srcCompat="@drawable/search_icon"
+        app:tint="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:background="@color/white"
         android:ems="10"
+        android:hint="@string/search_hint"
         android:inputType="textPersonName"
         android:textColor="#6b6178"
         app:layout_constraintEnd_toEndOf="@+id/searchButton"
@@ -65,7 +68,7 @@
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:backgroundTint="#19758C"
         android:text="Search"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"

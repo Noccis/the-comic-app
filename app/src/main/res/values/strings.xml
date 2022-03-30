@@ -2,5 +2,8 @@
     <string name="app_name">The comic app</string>
     <string name="show_explanation">I don\'t get it..</string>
     <string name="ok">Got it!</string>
+    <string name="no_match">Sorry, no match!</string>
+    <string name="no_image">Ops! Something went wrong.</string>
+    <string name="search_hint">Enter comic ID</string>
 
 </resources>

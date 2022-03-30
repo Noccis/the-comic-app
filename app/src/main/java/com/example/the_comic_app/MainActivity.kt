@@ -53,15 +53,15 @@ class MainActivity : AppCompatActivity() {
         noMatchTextView.visibility = View.GONE
         matchImageView = findViewById(R.id.matchImageView)
         matchImageView.visibility = View.GONE
-        matchComicId.findViewById<TextView>(R.id.matchIdTextView)
+        matchComicId = findViewById(R.id.matchIdTextView)
         matchComicId.visibility = View.GONE
-        matchComicName.findViewById<TextView>(R.id.comicNameTextView)
+        matchComicName = findViewById(R.id.matchNameTextView)
         matchComicName.visibility = View.GONE
-        matchComicDescription.findViewById<TextView>(R.id.matchDescriptionTextView)
+        matchComicDescription = findViewById(R.id.matchDescriptionTextView)
         matchComicDescription.visibility = View.GONE
-        matchComicExplanation.findViewById<TextView>(R.id.matchExplanationTextView)
+        matchComicExplanation = findViewById(R.id.matchExplanationTextView)
         matchComicExplanation.visibility = View.GONE
-        matchShowExplanationButton.findViewById<Button>(R.id.matchtoggleExplanationbutton)
+        matchShowExplanationButton = findViewById(R.id.matchtoggleExplanationbutton)
         matchShowExplanationButton.visibility = View.GONE
 
 
@@ -84,8 +84,7 @@ class MainActivity : AppCompatActivity() {
         // Getting the input and comparing it to list
         val searchText = searchView.text.toString().lowercase()
         compareIDToString(searchText)
-        // Showing the result
-        matchImageView.visibility = View.VISIBLE
+
     }
 
     private fun compareIDToString(text: String) {
@@ -118,9 +117,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showResult(comic: ComicStrip) {
+        // Connecting all the match views with the match comic
+
             Glide.with(this)
                 .load(comic.img)
                 .into(matchImageView)
+        matchComicId.text = comic.id.toString()
+        matchComicName.text = comic.name
+        matchComicDescription.text = comic.description
+        matchComicExplanation.text = comic.explanation
+        // Showing the result
+        matchImageView.visibility = View.VISIBLE
+        matchComicId.visibility = View.VISIBLE
+        matchComicName.visibility = View.VISIBLE
+        matchComicDescription.visibility = View.VISIBLE
+        matchComicExplanation.visibility = View.VISIBLE
+        matchShowExplanationButton.visibility = View.VISIBLE
+
     }
 
     private fun toggleShowSearchFunction() {

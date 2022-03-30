@@ -34,9 +34,10 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
                 .load(comic.img)
                 .into(holder.comicImage)
         }
-        // Set comic id, description and explanation
+        // Set comic id, name, description and explanation
         holder.comicId.text = comic.id.toString()
         holder.comicDescription.text = comic.description
+        holder.comicName.text = comic.name
         // Hiding explanation
         holder.comicExplanation.visibility = View.GONE
         holder.comicExplanation.text = comic.explanation
@@ -62,6 +63,7 @@ class ComicsRecycleAdapter(val context: Context, val comics: List<ComicStrip> ) 
         val comicId = itemView.findViewById<TextView>(R.id.comicIdTextView)
         val comicDescription = itemView.findViewById<TextView>(R.id.descriptionTextView)
         val toggleExplanationbutton = itemView.findViewById<Button>(R.id.toggleExplanationbutton)
-        var comicExplanation = itemView.findViewById<TextView>(R.id.explanationTextView)
+        val comicExplanation = itemView.findViewById<TextView>(R.id.explanationTextView)
+        val comicName = itemView.findViewById<TextView>(R.id.comicNameTextView)
     }
 }

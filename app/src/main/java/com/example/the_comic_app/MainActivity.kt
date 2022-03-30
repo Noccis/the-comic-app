@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun searchComics() {
         // Getting the input and comparing it to list
-        val searchText = searchView.text.toString()
+        val searchText = searchView.text.toString().lowercase()
         compareIDToString(searchText)
         // Showing the result
         resultImageView.visibility = View.VISIBLE
@@ -75,9 +75,12 @@ class MainActivity : AppCompatActivity() {
         // Searching thru the list with comics
         for (comic in DataManager.comics) {
             val id = comic.id.toString()
+            val name = comic.name.lowercase()
 
+            // If there is a match our comic object won't be null
             if (id == text ) {
-                // If there is a match our comic object won't be null
+                matchingComic = comic
+            }else if (name == text) {
                 matchingComic = comic
             }
         }

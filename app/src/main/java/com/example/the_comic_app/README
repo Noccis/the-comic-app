@@ -2,9 +2,11 @@ Hello!
 First day was spent getting to know Kotlin again after writing in other languages for a while and
 also to remembering how to do a recyclerview.
 I made the list as a Singelton to get easy access to it and because the whole app is based on it.
-I have only used API's as a list in Javascript before and therefore just copied some of the comic image urls to my own list.
+I have only used API's as a list in Javascript before.
+At first I tried reading up on Kotlin and fetching API but it took to much time so I just copied some of the comic image urls to my own list.
 Time spent: 4 hours (+ 1,5 hour on evening)
 
 Second day was all about design and getting that explanation and searchfunction in place.
+Time spent: 5 hours
 
 General notes:

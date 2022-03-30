@@ -55,7 +55,7 @@
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:background="@color/white"
         android:ems="10"
         android:hint="@string/search_hint"

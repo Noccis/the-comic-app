@@ -8,7 +8,7 @@ I have not been writing in Android Studio since out Android course and I realize
 I wanted the search-button inside the searchEditText to be more aligned and take up the same amount of height as the searchEditText but I could not solve it.
 I also spent some time trying to learn how to do a Fragment design to move the search function to its own fragment so that the recycle view wouldn't show below the matching comic but it took to much time.
 
-I choose the features that I thought would be possible with my narrow knowledge of Android Studio.
+I choose the features that I thought would be possible for me to do within the time limit.
 With the list and ComicStrip class in separate files it will be easier to make improvements and extend the features.
 It was much fun to go back to Kotlin and Android Studio and I now know what I will be doing during the summer break. :-)
 
